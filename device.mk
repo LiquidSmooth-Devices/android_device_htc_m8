@@ -20,8 +20,30 @@ $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 $(call inherit-product-if-exists, vendor/htc/m8-common/m8-common-vendor.mk)
 
+
 # overlays
 DEVICE_PACKAGE_OVERLAYS += device/htc/m8/overlay
+
+# F2FS tools
+PRODUCT_COPY_FILES := \
+    device/htc/m8/fstab/fstab.qcom.all-EXT4:system/extras/fstab/fstab.qcom.all-EXT4 \
+    device/htc/m8/fstab/fstab.qcom.all-F2FS:system/extras/fstab/fstab.qcom.all-F2FS \
+    device/htc/m8/fstab/fstab.qcom.data-F2FS:system/extras/fstab/fstab.qcom.data-F2FS \
+    device/htc/m8/tools/repack-and-flash.sh:system/extras/tools/repack-and-flash.sh \
+    device/htc/m8/tools/format-system.sh:system/extras/tools/format-system.sh \
+    device/htc/m8/tools/kernel/repackimg.sh:system/extras/tools/kernel/repackimg.sh \
+    device/htc/m8/tools/kernel/unpackimg.sh:system/extras/tools/kernel/unpackimg.sh \
+    device/htc/m8/tools/kernel/cleanup.sh:system/extras//tools/kernel/cleanup.sh \
+    device/htc/m8/tools/kernel/authors.txt:system/extras/tools/kernel/authors.txt \
+    device/htc/m8/tools/kernel/bin/aik:system/extras/tools/kernel/bin/aik \
+    device/htc/m8/tools/kernel/bin/busybox:system/extras/tools/kernel/bin/busybox \
+    device/htc/m8/tools/kernel/bin/file:system/extras/tools/kernel/bin/file \
+    device/htc/m8/tools/kernel/bin/lz4:system/extras/tools/kernel/bin/lz4 \
+    device/htc/m8/tools/kernel/bin/magic:system/extras/tools/kernel/bin/magic \
+    device/htc/m8/tools/kernel/bin/mkbootfs:system/extras/tools/kernel/bin/mkbootfs \
+    device/htc/m8/tools/kernel/bin/mkbootimg:system/extras/tools/kernel/bin/mkbootimg \
+    device/htc/m8/tools/kernel/bin/unpackbootimg:system/extras/tools/kernel/bin/unpackbootimg \
+    device/htc/m8/tools/kernel/bin/xz:system/extras/tools/kernel/bin/xz
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
@@ -233,3 +255,14 @@ PRODUCT_COPY_FILES += \
 # OTA ID
 PRODUCT_PROPERTY_OVERRIDES += \
 	otaupdater.otaid=liquidm8
+
+# F2FS
+PRODUCT_PACKAGES += \
+    mkfs.f2fs \
+    fsck.f2fs \
+    fibmap.f2fs
+
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+    setup_fs \
+    e2fsck
