@@ -20,8 +20,13 @@ $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 $(call inherit-product-if-exists, vendor/htc/m8-common/m8-common-vendor.mk)
 
+
 # overlays
 DEVICE_PACKAGE_OVERLAYS += device/htc/m8/overlay
+
+# F2FS tools
+PRODUCT_COPY_FILES := \
+    device/htc/m8/format-system.sh:system/extras/format-system.sh
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
