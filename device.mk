@@ -115,6 +115,8 @@ PRODUCT_PACKAGES += \
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     make_ext4fs \
+    mkfs.f2fs \
+    fsck.f2fs \
     setup_fs
 
 # FM radio
