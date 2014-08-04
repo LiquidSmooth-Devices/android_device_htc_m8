@@ -16,6 +16,10 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
+# Pick up overlay for features that depend on non-open-source files
+PRODUCT_PACKAGES += \
+    PPPreference
+
 LOCAL_MODULE := nfc.msm8974
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 LOCAL_SRC_FILES := nfc_hw.c
