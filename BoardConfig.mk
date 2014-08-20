@@ -159,6 +159,9 @@ BOARD_SEPOLICY_UNION += \
     wpa_socket.te \
     wpa.te
 
+PRODUCT_PACKAGES += \
+   TouchControl
+
 # Webkit
 ENABLE_WEBGL := true
 TARGET_FORCE_CPU_UPLOAD := true
