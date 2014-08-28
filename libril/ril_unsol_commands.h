@@ -65,3 +65,4 @@
     {RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED_HTC, responseVoid, WAKE_PARTIAL},   // s_unsolResponses[47]: 21005
     {RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED, responseDataCallList, WAKE_PARTIAL},  // s_unsolResponses[48]: 21007
     {RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED_M7, responseDataCallList, WAKE_PARTIAL},  // mapped to s_unsolResponses[48]: 5757
+
