@@ -47,6 +47,8 @@ persist.audio.fluence.speaker=true
 ro.qc.sdk.audio.fluencetype=fluence
 tunnel.audio.encode=true
 af.resampler.quality=4
+persist.call_recording.enabled=true
+persist.call_recording.src=1
 
 # AV
 media.aac_51_output_enabled=true
