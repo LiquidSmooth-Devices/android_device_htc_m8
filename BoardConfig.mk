@@ -54,7 +54,7 @@ TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
 COMMON_GLOBAL_CFLAGS += -DHTCLOG
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 zcache
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
@@ -109,7 +109,6 @@ BOARD_NFC_HAL_SUFFIX := msm8974
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
-TARGET_POWERHAL_NO_TOUCH_BOOST := true
 
 # RIL
 BOARD_PROVIDES_LIBRIL := true
@@ -185,11 +184,11 @@ TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_m8
 TARGET_LIBINIT_DEFINES_FILE := device/htc/m8/init/init_m8.c
 
-# External apps on SD
-TARGET_EXTERNAL_APPS = sdcard1
-
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/m8/releasetools
 
 # Hardware
 BOARD_HARDWARE_CLASS := device/htc/m8/cmhw
+
+# External apps on SD
+TARGET_EXTERNAL_APPS = sdcard1
