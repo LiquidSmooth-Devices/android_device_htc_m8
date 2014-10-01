@@ -53,6 +53,9 @@ TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
 # Flags
 COMMON_GLOBAL_CFLAGS += -DHTCLOG
 
+# Enable ArchiDroid Optimizations
+USE_ARCH_OPTIMIZATIONS=y
+
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 zcache
 BOARD_KERNEL_BASE := 0x00000000
